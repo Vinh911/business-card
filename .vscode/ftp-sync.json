@@ -1,0 +1,28 @@
+{
+    "remotePath": "./web/bc.bytebro.de",
+    "host": "http://s100028895.ngcobalt395.manitu.net",
+    "username": "ftp200018482",
+    "password": "8W693pKZzFPMppAu",
+    "port": 21,
+    "secure": false,
+    "protocol": "ftp",
+    "uploadOnSave": false,
+    "passive": false,
+    "debug": false,
+    "privateKeyPath": null,
+    "passphrase": null,
+    "agent": null,
+    "allow": [],
+    "ignore": [
+        "\\client",
+        "\\.vscode",
+        "\\.git",
+        "\\.DS_Store"
+    ],
+    "generatedFiles": {
+        "extensionsToInclude": [
+            ""
+        ],
+        "path": ""
+    }
+}
