@@ -4,6 +4,7 @@ import './index.css';
 import Profile from './Components/Profile/Profile';
 import Admin from './Components/Admin/Admin';
 import Register from './Components/Register/Register';
+
 import {
     BrowserRouter as Router,
     Routes,

@@ -31,7 +31,7 @@ function Register() {
         };
 
         fetch("https://bc.bytebro.de/api/register.php", requestOptions)
-            .then(response => response.text())
+            .then(response => response.json())
             .then(result => setMessage(result))
             .catch(error => setMessage(error));
     }
