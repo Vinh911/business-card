@@ -14,10 +14,10 @@
         echo json_encode('Falsche Parameter');
     }
 
-    $email = $postData['email'];
-    $password = $postData['password'];
-
     if(!$error) {
+        $email = $postData['email'];
+        $password = $postData['password'];
+        
         $statement = $pdo->prepare("SELECT * FROM users WHERE email = :email");
         $result = $statement->execute(array('email' => $email));
         $user = $statement->fetch();

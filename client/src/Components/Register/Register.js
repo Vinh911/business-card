@@ -2,16 +2,16 @@ import { useState } from 'react';
 import './Register.css';
 
 function Register() {
-    const [error, setError] = useState();
+    const [message, setMessage] = useState();
     const [email, setEmail] = useState();
     const [password1, setPassword1] = useState();
     const [password2, setPassword2] = useState();
 
     const handleSubmit = (e) => {
-        setError(null);
+        setMessage(null);
         e.preventDefault();
         if (password1 !== password2) {
-            setError('Passwörter stimmen nicht überein!');
+            setMessage('Passwörter stimmen nicht überein!');
             return;
         }
 
@@ -32,8 +32,8 @@ function Register() {
 
         fetch("https://bc.bytebro.de/api/register.php", requestOptions)
             .then(response => response.text())
-            .then(result => setError(result))
-            .catch(error => setError('error', error));
+            .then(result => setMessage(result))
+            .catch(error => setMessage(error));
     }
 
     return (
@@ -45,7 +45,7 @@ function Register() {
                 <input type="password" name="password" required onChange={e => setPassword1(e.target.value)} />
                 <label>Passwort bestätigen:</label>
                 <input type="password" name="password" onChange={e => setPassword2(e.target.value)} />
-                <p>{error}</p>
+                <p>{message}</p>
                 <button type="submit">Registrieren</button>
             </form>
         </div>
