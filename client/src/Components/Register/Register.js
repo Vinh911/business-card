@@ -15,19 +15,25 @@ function Register() {
             return;
         }
 
-        var formdata = new FormData();
-        formdata.append("email", email);
-        formdata.append("password", password1);
+        var myHeaders = new Headers();
+        myHeaders.append("Content-Type", "application/json");
+
+        var raw = JSON.stringify({
+            "email": email,
+            "password": password1
+        });
 
         var requestOptions = {
             method: 'POST',
-            body: formdata,
+            headers: myHeaders,
+            body: raw,
             redirect: 'follow'
         };
+
         fetch("https://bc.bytebro.de/api/register.php", requestOptions)
             .then(response => response.text())
             .then(result => setError(result))
-            .catch(error => setError(error));
+            .catch(error => setError('error', error));
     }
 
     return (
