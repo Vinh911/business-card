@@ -1,6 +1,7 @@
 import './Dashboard.css';
-import Login from '../Login/Login';
 import useToken from './useToken';
+import Login from '../Login/Login';
+import Navbar from '../Navbar/Navbar';
 
 function Dashboard() {
     const { token, setToken } = useToken();
@@ -11,9 +12,12 @@ function Dashboard() {
         );
     } else {
         return (
-            <div className="dashboard">
-                Dashboard
-            </div>
+            <>
+                <Navbar />
+                <div className="dashboard">
+                    <h1>Dashboard</h1>
+                </div>
+            </>
         );
     }
 }
