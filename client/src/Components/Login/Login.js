@@ -10,7 +10,6 @@ export default function Login({ setToken }) {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log(message)
         var myHeaders = new Headers();
         myHeaders.append("Content-Type", "application/json");
 
@@ -30,7 +29,6 @@ export default function Login({ setToken }) {
             .then(response => response.json())
             .then(result => {
                 if (result['msg'] !== undefined && result['token'] !== undefined) {
-                    console.log("Succ: " + result['msg']);
                     setToken(result['token']);
                     setMessage(result['msg']);
                 } else {

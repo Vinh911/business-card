@@ -2,9 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import Profile from './Components/Profile/Profile';
-import Admin from './Components/Admin/Admin';
+import Dashboard from './Components/Dashboard/Dashboard';
 import Register from './Components/Register/Register';
-
+import Navbar from './Components/Navbar/Navbar';
 import {
     BrowserRouter as Router,
     Routes,
@@ -17,8 +17,9 @@ root.render(
         <Router>
             <Routes>
                 <Route exact path="/" element={<Profile />} />
-                <Route path="/admin" element={<Admin />} />
+                <Route path="/dashboard" element={<Dashboard />} />
                 <Route path="/register" element={<Register />} />
+                <Route path="/dev" element={<Navbar />} />
             </Routes>
         </Router>
     </React.StrictMode>

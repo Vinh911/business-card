@@ -1,9 +1,8 @@
-import { useState } from 'react';
-import './Admin.css';
+import './Dashboard.css';
 import Login from '../Login/Login';
 import useToken from './useToken';
 
-function Admin() {
+function Dashboard() {
     const { token, setToken } = useToken();
 
     if (!token) {
@@ -12,11 +11,11 @@ function Admin() {
         );
     } else {
         return (
-            <div className="Admin">
-                Admin
+            <div className="dashboard">
+                Dashboard
             </div>
         );
     }
 }
 
-export default Admin;
+export default Dashboard;
