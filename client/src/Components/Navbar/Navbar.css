@@ -6,6 +6,7 @@
     padding: 20px;
     border-bottom-left-radius: 25px;
     border-bottom-right-radius: 25px;
+    box-sizing: border-box;
 }
 
 .navbar-items {
