@@ -1,0 +1,23 @@
+.add-card {
+    top: 0;
+    width: 100vw;
+    height: 100vw;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.add-card-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.add-card-form input,
+.add-card-form button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
