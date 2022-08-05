@@ -4,7 +4,7 @@ import './index.css';
 import Profile from './Components/Profile/Profile';
 import Dashboard from './Components/Dashboard/Dashboard';
 import Register from './Components/Register/Register';
-import Navbar from './Components/Navbar/Navbar';
+import AddCard from './Components/AddCard/AddCard';
 import {
     BrowserRouter as Router,
     Routes,
@@ -19,7 +19,7 @@ root.render(
                 <Route exact path="/" element={<Profile />} />
                 <Route path="/dashboard" element={<Dashboard />} />
                 <Route path="/register" element={<Register />} />
-                <Route path="/dev" element={<Navbar />} />
+                <Route path="/add" element={<AddCard />} />
             </Routes>
         </Router>
     </React.StrictMode>

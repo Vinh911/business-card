@@ -27,7 +27,7 @@ export default function Navbar() {
 
             <div className="navbar-items">
                 <button onClick={() => setIsOpen(!isOpen)}>Menue</button>
-                <button>Add</button>
+                <button onClick={() => window.location.href = '/add'}>Add</button>
             </div>
         </div >
     );
