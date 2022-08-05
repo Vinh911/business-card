@@ -6,16 +6,15 @@
     header("Access-Control-Allow-Methods: POST");
     include 'connection.php';
     
-    $postData = json_decode(file_get_contents('php://input'), true);
     $error = false;
 
-    if(!$postData['id']) {
+    if(!$_GET["id"]) {
         $error = true;
         echo json_encode('Etwas ist schief gelaufen');
     }
 
     if(!$error) {
-        $id = $postData['id'];
+        $id = $_GET['id'];
         $statement = $pdo->prepare("SELECT * FROM profile WHERE id = :id");
         $statement->execute(array("id" => $id));
         $res = $statement->fetchAll();
