@@ -5,4 +5,11 @@
     max-width: 400px;
     padding: 20px;
     margin: 0 auto;
+    box-sizing: border-box;
+}
+
+.dashboard-content {
+    margin: auto;
+    margin-top: 20%;
+    width: 50%;
 }
