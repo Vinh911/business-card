@@ -1,6 +1,6 @@
 import './Navbar.css';
 import { useState } from 'react';
-
+import { MdOutlineMenu, MdAddCircleOutline } from 'react-icons/md';
 
 
 export default function Navbar() {
@@ -26,8 +26,8 @@ export default function Navbar() {
             {isOpen ? displayMenue() : null}
 
             <div className="navbar-items">
-                <button onClick={() => setIsOpen(!isOpen)}>Menue</button>
-                <button onClick={() => window.location.href = '/add'}>Add</button>
+                <MdOutlineMenu className="icon" onClick={() => setIsOpen(!isOpen)} />
+                <MdAddCircleOutline className="icon" onClick={() => window.location.href = '/add'} />
             </div>
         </div >
     );
