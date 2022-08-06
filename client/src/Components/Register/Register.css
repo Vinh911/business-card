@@ -4,7 +4,8 @@
     align-items: center;
     justify-content: center;
     height: 100vh;
-
+    max-width: 400px;
+    margin: 0 auto;
 }
 
 .register-form {
