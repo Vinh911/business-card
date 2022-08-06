@@ -1,15 +1,43 @@
 .dashboard {
-    top: 0;
-    width: 100vw;
-    height: 100vw;
-    max-width: 400px;
-    padding: 20px;
-    margin: 0 auto;
-    box-sizing: border-box;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 0.5fr 0.5fr;
 }
 
 .dashboard-content {
-    margin: auto;
-    margin-top: 20%;
+    grid-row-start: 2;
+    text-align: center;
+    width: 148px;
+    height: 148px;
+    margin: 0 auto;
+}
+
+.dashboard-navigation {
+    grid-row-start: 4;
+    margin: 0 auto;
+    height: 50px;
     width: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.dashboard-navigation button {
+    width: 50px;
+}
+
+.dashboard-edit {
+    grid-row-start: 5;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dashboard-edit button {
+    width: 50%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
 }
