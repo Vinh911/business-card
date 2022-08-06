@@ -4,6 +4,7 @@ import QRCode from 'qrcode';
 import useToken from './useToken';
 import Login from '../Login/Login';
 import Navbar from '../Navbar/Navbar';
+import { MdKeyboardArrowRight, MdKeyboardArrowLeft } from 'react-icons/md';
 
 function Dashboard() {
     const { token, setToken } = useToken();
@@ -63,9 +64,13 @@ function Dashboard() {
                         <canvas id="qr-code" />
                     </div>
                     <div className="dashboard-navigation">
-                        <button onClick={() => handleClick("-")}>-</button>
+                        <button onClick={() => handleClick("-")}>
+                            <MdKeyboardArrowLeft className="icon" />
+                        </button>
                         <p>{data ? data[index] : null}</p>
-                        <button onClick={() => handleClick("+")}>+</button>
+                        <button onClick={() => handleClick("+")}>
+                            <MdKeyboardArrowRight className="icon" />
+                        </button>
                     </div>
                     <div className="dashboard-edit">
                         <button onClick={() => { }}>Bearbeiten</button>

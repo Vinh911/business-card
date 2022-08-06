@@ -23,6 +23,8 @@
 
 .dashboard-navigation button {
     width: 50px;
+    border: none;
+    background: none;
 }
 
 .dashboard-edit {
@@ -36,8 +38,13 @@
 .dashboard-edit button {
     width: 50%;
     padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-sizing: border-box;
+    margin-bottom: 40px;
+    color: white;
+    background-color: black;
+    border-radius: 25px;
+}
+
+.icon {
+    width: 50px;
+    height: 50px;
 }
