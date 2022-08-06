@@ -1,4 +1,7 @@
 <?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
     header("Access-Control-Allow-Origin: *");
     // header("Access-Control-Allow-Origin: http://localhost:3000");
     header('Content-Type: application/json');
@@ -17,19 +20,19 @@
         $id = $_GET['id'];
         $statement = $pdo->prepare("SELECT * FROM profile WHERE id = :id");
         $statement->execute(array("id" => $id));
-        $res = $statement->fetchAll();
-        if (count($res) > 0) {
+        $res = $statement->fetch();
+        if ($res) {
             $result = array(
-                    "id" => "894707",
-                    "user"=> 10,
-                    "color"=> null,
-                    "name"=> "Vinh Nguyen",
-                    "position"=> "Bürgermeister",
-                    "company"=> "Landeshauptstadt Dresden",
-                    "phone"=> "+49 173 8168686",
-                    "email"=> "vinh@dresden.de",
-                    "website"=> "www.dresden.de",
-                    "address"=> null,
+                    "id" => $res["id"],
+                    "user"=> $res["user"],
+                    "color"=> $res["color"],
+                    "name"=> $res["name"],
+                    "position"=> $res["position"],
+                    "company"=> $res["company"],
+                    "phone"=> $res["phone"],
+                    "email"=> $res["email"],
+                    "website"=> $res["website"],
+                    "address"=> $res["address"],
             );
             echo json_encode($result);
         } else {

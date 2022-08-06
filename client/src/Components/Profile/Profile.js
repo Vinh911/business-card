@@ -7,22 +7,21 @@ function Profile() {
     const [data, setData] = useState();
     const [message, setMessage] = useState();
 
-    let id = searchParams.get('id');
 
     useEffect(() => {
-
         var requestOptions = {
             method: 'GET',
             redirect: 'follow'
         };
-
+        setData();
+        let id = searchParams.get('id');
         var url = "https://bc.bytebro.de/api/displayCard.php?id=" + id;
 
         fetch(url, requestOptions)
             .then(response => response.text())
             .then(result => setData(JSON.parse(result)))
             .catch(error => setMessage(error));
-    }, [id]);
+    }, [searchParams]);
 
     if (!data) {
         return <div>Loading...</div>;
