@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import './Login.css';
 import PropTypes from 'prop-types';
-
+import { MdOutlineEmail, MdOutlineLock } from 'react-icons/md';
 
 export default function Login({ setToken }) {
     const [message, setMessage] = useState();
@@ -41,12 +41,22 @@ export default function Login({ setToken }) {
     return (
         <div className="login">
             <form className="login-form" onSubmit={handleSubmit}>
-                <label>Email: </label>
-                <input type="email" name="email" required onChange={e => setEmail(e.target.value)} />
-                <label>Passwort: </label>
-                <input type="password" name="password" required onChange={e => setPassword(e.target.value)} />
+                <p className="heading">Wilkommen zurück</p>
+                <p className="sub-heading">Bitte loggen Sie sich ein</p>
+                <div className="input-group">
+                    <MdOutlineEmail className="input-icon" />
+                    <input type="email" name="email" placeholder="Email" required onChange={e => setEmail(e.target.value)} />
+                </div>
+                <div className="input-group">
+                    <MdOutlineLock className="input-icon" />
+                    <input type="password" name="password" placeholder="Passwort" required onChange={e => setPassword(e.target.value)} />
+                </div>
                 <p>{message}</p>
-                <button type="submit">Login</button>
+                <div className="submit-group">
+                    <input className="login-button" type="submit" value="Login" />
+                    <p>Du hast keinen Account? <span onClick={() => window.location.href = '/register'}>Registrieren</span></p>
+                </div>
+
             </form>
         </div>
     );
