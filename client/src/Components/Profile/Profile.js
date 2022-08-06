@@ -2,6 +2,7 @@ import './Profile.css';
 import { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import logo from './dove.png';
+import { MdOutlineEmail, MdPhone, MdHouse, MdDevices } from 'react-icons/md';
 
 function Profile() {
     const [searchParams] = useSearchParams();
@@ -44,10 +45,10 @@ function Profile() {
                 </div>
                 <div className='bottom'>
                     <div className='data'>
-                        <p>{data['phone']}</p>
-                        <p>{data['email']}</p>
-                        <p>{data['website']}</p>
-                        <p>{data['address']}</p>
+                        <p><MdPhone className="icon" />{data['phone']}</p>
+                        <p><MdOutlineEmail className="icon" /> {data['email']}</p>
+                        <p><MdDevices className="icon" />{data['website']}</p>
+                        <p><MdHouse className="icon" />{data['address']}</p>
                     </div>
                 </div>
             </div>
