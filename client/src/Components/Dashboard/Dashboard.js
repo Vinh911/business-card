@@ -25,6 +25,7 @@ function Dashboard() {
             .then(result => setData(JSON.parse(result)))
             .catch(error => setMessage(error));
 
+
     }, [token]);
 
     useEffect(() => {
@@ -41,7 +42,7 @@ function Dashboard() {
 
     const handleClick = (change) => {
         if (change === "+") {
-            if (index < data.length - 1) {
+            if (index < data[index].length - 1) {
                 setIndex(index + 1);
             }
         } else {
