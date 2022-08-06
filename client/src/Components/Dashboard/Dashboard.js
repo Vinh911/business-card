@@ -8,7 +8,7 @@ import { MdKeyboardArrowRight, MdKeyboardArrowLeft } from 'react-icons/md';
 
 function Dashboard() {
     const { token, setToken } = useToken();
-    const [data, setData] = useState(null);
+    const [data, setData] = useState();
     const [index, setIndex] = useState(0);
     const [message, setMessage] = useState(null);
 
@@ -24,11 +24,12 @@ function Dashboard() {
             .then(response => response.text())
             .then(result => setData(JSON.parse(result)))
             .catch(error => setMessage(error));
+
     }, [token]);
 
     useEffect(() => {
         if (data) {
-            let url = "https://bc.bytebro.de?id=" + data[index];
+            let url = "https://bc.bytebro.de/profile?id=" + data[index]['id'];
 
             QRCode.toCanvas(document.getElementById('qr-code'), url,
                 function (error) {
@@ -60,6 +61,7 @@ function Dashboard() {
                 <Navbar />
                 <div className="dashboard">
                     <div className="dashboard-content">
+                        {data ? "" : "Fügen Sie Ihre erste Karte hinzu"}
                         {message ? <p>{message}</p> : null}
                         <canvas id="qr-code" />
                     </div>
@@ -67,7 +69,7 @@ function Dashboard() {
                         <button onClick={() => handleClick("-")}>
                             <MdKeyboardArrowLeft className="icon" />
                         </button>
-                        <p>{data ? data[index] : null}</p>
+                        <p>{data ? data[index]['position'] + ", " + data[index]['company'] : null}</p>
                         <button onClick={() => handleClick("+")}>
                             <MdKeyboardArrowRight className="icon" />
                         </button>

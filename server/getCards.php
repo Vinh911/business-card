@@ -13,7 +13,7 @@
         echo json_encode('Etwas ist schief gelaufen');
     }
 
-    $statement = $pdo->prepare("SELECT id FROM profile WHERE user = :id");
+    $statement = $pdo->prepare("SELECT id, position, company FROM profile WHERE user = :id");
     $statement->execute(array("id" => $_GET['id']));
     $res = $statement->fetchAll();
 
@@ -21,7 +21,7 @@
         $result=[];
         
         foreach($res as $row) {
-            array_push($result, $row['id']);
+            array_push($result, array("id"=>$row['id'], "position"=>$row['position'], "company"=>$row['company']));
         }
 
         echo json_encode($result);

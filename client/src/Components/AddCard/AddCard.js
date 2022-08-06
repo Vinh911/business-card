@@ -55,7 +55,7 @@ function AddCard() {
                 <input type="text" name="address" placeholder="Adresse, PLZ, Stadt" />
                 {message}
                 <input className="add" type="submit" value="Karte hinzufügen" />
-                <button className="back" type="button" onClick={() => window.location.href = '/dashboard'}>Zurück</button>
+                <button className="back" type="button" onClick={() => window.location.href = '/'}>Zurück</button>
             </form>
         </div>
     );

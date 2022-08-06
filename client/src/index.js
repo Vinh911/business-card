@@ -16,8 +16,8 @@ root.render(
     <React.StrictMode>
         <Router>
             <Routes>
-                <Route exact path="/" element={<Profile />} />
-                <Route path="/dashboard" element={<Dashboard />} />
+                <Route path="/" element={<Dashboard />} />
+                <Route exact path="/profile" element={<Profile />} />
                 <Route path="/register" element={<Register />} />
                 <Route path="/add" element={<AddCard />} />
             </Routes>
