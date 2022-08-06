@@ -57,7 +57,7 @@ function Register() {
                 <p>{message}</p>
                 <div className="submit-group">
                     <input className="register-button" type="submit" value="Registrieren" />
-                    <p>Du hast einen Account? <span onClick={() => window.location.href = '/dashboard'}>Login</span></p>
+                    <p>Du hast einen Account? <span onClick={() => window.location.href = '/'}>Login</span></p>
                 </div>
             </form>
         </div>
