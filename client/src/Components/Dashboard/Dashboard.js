@@ -41,8 +41,9 @@ function Dashboard() {
     }, [data, index]);
 
     const handleClick = (change) => {
+
         if (change === "+") {
-            if (index < data[index].length - 1) {
+            if (index < data.length - 1) {
                 setIndex(index + 1);
             }
         } else {
