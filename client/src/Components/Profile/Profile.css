@@ -15,7 +15,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: end;
+    align-items: flex-end;
 }
 
 .middle {
@@ -31,7 +31,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: start;
+    align-items: flex-start;
 }
 
 .data {
@@ -43,7 +43,18 @@
     box-sizing: border-box;
 }
 
+a .icon,
 p .icon {
     height: 23px;
     transform: translateY(20%);
+    color: black;
+}
+
+.data p {
+    margin: 0;
+}
+
+.data a {
+    text-decoration: none;
+    color: black;
 }

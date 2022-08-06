@@ -45,13 +45,13 @@ function Profile() {
                 </div>
                 <div className='bottom'>
                     <div className='data'>
-                        <p><MdPhone className="icon" />{data['phone']}</p>
-                        <p><MdOutlineEmail className="icon" /> {data['email']}</p>
-                        <p><MdDevices className="icon" />{data['website']}</p>
+                        <a href={"tel:" + data['phone']}><MdPhone className="icon" />{data['phone']}</a>
+                        <a href={"mailto:" + data['email']}><MdOutlineEmail className="icon" /> {data['email']}</a>
+                        <a href={data['website']}><MdDevices className="icon" />{data['website']}</a>
                         <p><MdHouse className="icon" />{data['address']}</p>
                     </div>
                 </div>
-            </div>
+            </div >
         );
     }
 }
