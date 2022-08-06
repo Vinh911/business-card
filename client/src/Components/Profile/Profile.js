@@ -1,6 +1,7 @@
 import './Profile.css';
 import { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
+import logo from './dove.png';
 
 function Profile() {
     const [searchParams] = useSearchParams();
@@ -37,6 +38,7 @@ function Profile() {
                 </div>
                 <div className='middle'>
                     <div className='data'>
+                        <img src={logo} style={{ height: "150px" }} alt="company logo" />
                         {message ? <p>{message}</p> : null}
                     </div>
                 </div>
