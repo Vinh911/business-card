@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import './Register.css';
+import { MdOutlineEmail, MdOutlineLock } from 'react-icons/md';
 
 function Register() {
     const [message, setMessage] = useState();
@@ -39,14 +40,25 @@ function Register() {
     return (
         <div className="register">
             <form className="register-form" onSubmit={handleSubmit}>
-                <label>Email: </label>
-                <input type="email" name="email" onChange={e => setEmail(e.target.value)} />
-                <label>Password: </label>
-                <input type="password" name="password" required onChange={e => setPassword1(e.target.value)} />
-                <label>Passwort bestätigen:</label>
-                <input type="password" name="password" onChange={e => setPassword2(e.target.value)} />
+                <p className="heading">Registrierung</p>
+                <p className="sub-heading">Lege deinen neuen Account an</p>
+                <div className="input-group">
+                    <MdOutlineEmail className="input-icon" />
+                    <input type="email" name="email" required placeholder='Email' onChange={e => setEmail(e.target.value)} />
+                </div>
+                <div className="input-group">
+                    <MdOutlineLock className="input-icon" />
+                    <input type="password" name="password" required placeholder="Passwort" onChange={e => setPassword1(e.target.value)} />
+                </div>
+                <div className="input-group">
+                    <MdOutlineLock className="input-icon" />
+                    <input type="password" name="password" required placeholder="Passwort bestätigen" onChange={e => setPassword2(e.target.value)} />
+                </div>
                 <p>{message}</p>
-                <button type="submit">Registrieren</button>
+                <div className="submit-group">
+                    <input className="register-button" type="submit" value="Registrieren" />
+                    <p>Du hast einen Account? <span onClick={() => window.location.href = '/dashboard'}>Login</span></p>
+                </div>
             </form>
         </div>
     );
